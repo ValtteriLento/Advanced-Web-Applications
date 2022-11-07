@@ -3,6 +3,11 @@ div.container {
     margin: 0 auto;
 }
 
+.wiki-header {
+    text-align: center;
+    text-transform: capitalize;
+}
+
 .wiki-img {
     width: 100%;
 }
