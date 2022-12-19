@@ -8,12 +8,50 @@ interface Vehicle {
     power: number;
 }
 
+interface Car {
+    model: string;
+    color: string;
+    year: number;
+    power: number;
+    bodyType: string;
+    wheelCount: number;
+}
+
+interface Boat {
+    model: string;
+    color: string;
+    year: number;
+    power: number;
+    draft: number;
+}
+
+interface Plane {
+    model: string;
+    color: string;
+    year: number;
+    power: number;
+    wingspan: number;
+}
+
 let vehicles: Vehicle[] = [];
 
 const addVehicle = (req: Request, res: Response) => {
 
-    const { model, color, year, power } = req.body;
-    let vehicle: Vehicle = { model, color, year, power };
+    let vehicle: Vehicle;
+
+    if ("bodyType" in req.body && "wheelCount" in req.body) {
+        const { model, color, year, power, bodyType, wheelCount } = req.body;
+        vehicle = { model, color, year, power, bodyType, wheelCount } as Car;
+    } else if ("draft" in req.body) {
+        const { model, color, year, power, draft } = req.body;
+        vehicle = { model, color, year, power, draft } as Boat;
+    } else if ("wingspan" in req.body) {
+        const { model, color, year, power, wingspan } = req.body;
+        vehicle = { model, color, year, power, wingspan } as Plane;
+    } else {
+        const { model, color, year, power } = req.body;
+        vehicle = { model, color, year, power };
+    }
 
     vehicles.push(vehicle);
 
