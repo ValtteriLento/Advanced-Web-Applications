@@ -25,7 +25,7 @@ app.post('/api/user/register', async (req, res) => {
             console.log(users)
             res.send(getUserByUsername(req.body.username))
         } catch {
-            res.sendStatus(400)
+            res.redirect("/api/user/register")
         }
     } else {
         res.sendStatus(400)
