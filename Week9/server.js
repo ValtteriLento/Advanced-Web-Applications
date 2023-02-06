@@ -4,11 +4,13 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
+const os = require("os");
 
-const usersRouter = require('./routes/users');
+const usersRouter = require('./routes/users.js');
 
 const app = express();
 
+//const mongoDB = "mongodb://localhost:27017/testdb";
 const mongoDB = process.env.MONGO_URL;
 mongoose.connect(mongoDB);
 mongoose.Promise = Promise;
