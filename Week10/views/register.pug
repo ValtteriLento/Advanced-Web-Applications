@@ -1,10 +1,10 @@
 extends layout
 
 block content
-  h1 Register
+  h1 Registration page
   form(action="/register.html" method="POST")
     label(for="email") Email 
-    input(type="text" name="email" id="email" required)
+    input(type="email" placeholder="Enter Email" name="email" id="email" required)
     label(for="password") Password 
-    input(type="password" name="password" id="password" required)
-    button(class="btn" type="submit") Register
+    input(type="password" placeholder="Enter Password" name="password" id="password" required)
+    input(class="btn" type="submit" value="Register")
