@@ -10,7 +10,7 @@ router.get('/:name', (req, res, next) => {
         if(book) {
             return res.json(book);
         } else {
-            return res.status(404).send("This is not the webpage you are looking for");
+            return res.status(404).send("Book not found");
         }
     });
 });
