@@ -8,6 +8,7 @@ var cors = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var apiRouter = require('./routes/api');
+var bookRouter = require('./routes/book');
 
 var app = express();
 
@@ -34,5 +35,6 @@ if (process.env.NODE_ENV === "development") {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', apiRouter);
+app.use('/book', bookRouter);
 
 module.exports = app;
