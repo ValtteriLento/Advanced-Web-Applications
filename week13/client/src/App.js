@@ -1,6 +1,7 @@
 import './App.css';
 import Index from "./components/Index"
 import Book from "./components/Book"
+import NotFound from "./components/NotFound"
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={ <Index /> } />
                     <Route path="/book/:name" element={ <Book /> } />
+                    <Route path="*" element={ <NotFound /> } />
                 </Routes>
             </div>
         </Router>
